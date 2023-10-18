@@ -2,7 +2,7 @@
 home: true
 heroImage: /img/hero.png
 heroText: 夜枫林の小酒馆
-# tagline: Hero 副标题
+tagline: 学也有涯，而知也无涯
 actionText: 快速上手 →
 actionLink: /zh/guide/
 features:
