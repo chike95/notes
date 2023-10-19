@@ -19,10 +19,6 @@ module.exports = [
         ]
     },
     {
-        text: '研究学习', link: '/WORK/',
-        items: [
-            { text: '项目研究', link: '/WORK/study/' },
-            { text: '传输层', link: '/guide/articles/two/' },
-        ]
+        text: '研究学习', link: '/study/',
     },
 ]

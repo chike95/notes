@@ -1,7 +1,7 @@
 module.exports = [
     {
         title: '软硬结合-从零打造物联网',
-        path: '/WORK/study/1',
+        path: '/study/1',
         collapsable: true,
         sidebarDepth: 2,
         // children: [
