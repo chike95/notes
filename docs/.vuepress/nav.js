@@ -12,13 +12,16 @@ module.exports = [
         ]
     },
     {
-        text: '后端', link: '/后端/',
+        text: '后端', link: '/RD/',
         items: [
-            { text: 'Linux', link: '/后端/开发环境/linux/' },
-            { text: '高级懵逼', link: '/guide/articles/two/' },
+            { text: 'NodeJS', link: '/RD/node/' },
+            { text: 'Java Linux', link: '/RD/spring/' },
         ]
     },
     {
         text: '研究学习', link: '/study/',
+    },
+    {
+        text: '工作', link: '/work/',
     },
 ]
