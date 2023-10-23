@@ -1,6 +1,10 @@
 module.exports = [
     {
-        text: '硬件开发', link: '/硬件/',
+        text: '硬件开发', link: '/EE/',
+        items: [
+            { text: '元器件', link: '/EE/components/' },
+            { text: '开发板', link: '/EE/DB/' },
+        ]
     },
     {
         text: '前端',
