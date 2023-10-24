@@ -1,7 +1,7 @@
 module.exports = [
     {
-        title: 'DH11',
-        path: '/EE/components/dh11',
+        title: 'DHT11',
+        path: '/EE/components/dht11',
         collapsable: true,
         sidebarDepth: 2,
         // children: [
