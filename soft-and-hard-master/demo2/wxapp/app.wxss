@@ -1,0 +1,4 @@
+/**app.wxss**/
+html{
+  background-color: balck;
+}
