@@ -10,7 +10,7 @@ module.exports = [
     },
     {
         title: 'STM32F103',
-        path: '/EE/DB/stm32f103/',
+        path: '/EE/DB/stm32f103',
         collapsable: true,
         sidebarDepth: 2,
     }
