@@ -3,6 +3,8 @@ module.exports = {
     '/EE/components': require('../EE/components/sidebar'),
     '/EE/DB': require('../EE/DB/sidebar'),
 
+    '/RD/node': require('../RD/node/sidebar'),
+
     '/FE/VUE': require('../FE/VUE/sidebar'),
     '/study/': require('../study/sidebar'),
     '/work/': require('../work/sidebar'),
