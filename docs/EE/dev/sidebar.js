@@ -1,7 +1,7 @@
 module.exports = [
     {
-        title: 'ESP8266',
-        path: '/EE/DB/esp8266',
+        title: 'keil',
+        path: '/EE/dev/keil',
         collapsable: true,
         sidebarDepth: 2,
         // children: [

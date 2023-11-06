@@ -4,7 +4,7 @@ module.exports = [
         items: [
             { text: '元器件', link: '/EE/components/' },
             { text: '开发板', link: '/EE/DB/' },
-            { text: '开发环境', link: '/EE/EE_envs/' },
+            { text: '开发环境', link: '/EE/dev/' },
         ]
     },
     {
