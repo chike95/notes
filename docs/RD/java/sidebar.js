@@ -3,7 +3,7 @@ module.exports = [
         title: '安装配置',
         path: '/RD/java/01_config',
         collapsable: true,
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         // children: [
         //     '/FE/VUE/base'
         // ]
