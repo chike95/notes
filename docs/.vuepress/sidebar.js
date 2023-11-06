@@ -4,8 +4,12 @@ module.exports = {
     '/EE/DB': require('../EE/DB/sidebar'),
 
     '/RD/node': require('../RD/node/sidebar'),
+    '/RD/java': require('../RD/java/sidebar'),
+    '/RD/spring': require('../RD/spring/sidebar'),
 
     '/FE/VUE': require('../FE/VUE/sidebar'),
+    '/FE/CSS': require('../FE/CSS/sidebar'),
+
     '/study/': require('../study/sidebar'),
     '/work/': require('../work/sidebar'),
 }	
