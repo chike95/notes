@@ -13,6 +13,12 @@ module.exports = [
         sidebarDepth: 2,
     },
     {
+        title: '网络设备',
+        path: '/work/devices/',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
+    {
         title: '项目部署',
         path: '/work/deploy/',
         collapsable: true,
