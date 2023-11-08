@@ -1,7 +1,7 @@
 module.exports = [
     {
         title: '安装配置',
-        path: '/RD/java/01_config',
+        path: '/RD/node/01_config',
         collapsable: true,
         sidebarDepth: 2,
         // children: [
@@ -9,12 +9,9 @@ module.exports = [
         // ]
     },
     {
-        title: 'Spring Boot',
-        path: '/RD/java/01_config',
+        title: '快速上手',
+        path: '/RD/spring/01_introduction',
         collapsable: true,
         sidebarDepth: 2,
-        // children: [
-        //     '/FE/VUE/base'
-        // ]
     },
 ]
