@@ -9,8 +9,8 @@ module.exports = [
         // ]
     },
     {
-        title: 'VuePress',
-        path: '/FE/VUE/vuepress',
+        title: 'OLED',
+        path: '/EE/components/oled',
         collapsable: true,
         sidebarDepth: 2,
     }
