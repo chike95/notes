@@ -9,8 +9,8 @@ module.exports = [
         // ]
     },
     {
-        title: '快速上手',
-        path: '/RD/spring/01_introduction',
+        title: 'SSH',
+        path: '/RD/linux/ssh',
         collapsable: true,
         sidebarDepth: 2,
     },
