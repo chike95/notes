@@ -19,6 +19,7 @@ module.exports = [
     {
         text: '后端', link: '/RD/',
         items: [
+            { text: '计算机网络', link: '/RD/com/' },
             { text: 'Node', link: '/RD/node/' },
             { text: 'Java', link: '/RD/java/' },
             { text: 'Spring', link: '/RD/spring/' },

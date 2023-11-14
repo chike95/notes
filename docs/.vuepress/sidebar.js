@@ -4,10 +4,12 @@ module.exports = {
     '/EE/DB': require('../EE/DB/sidebar'),
     '/EE/dev': require('../EE/dev/sidebar'),
 
+    '/RD/com': require('../RD/com/sidebar'),
     '/RD/node': require('../RD/node/sidebar'),
     '/RD/java': require('../RD/java/sidebar'),
     '/RD/spring': require('../RD/spring/sidebar'),
     '/RD/linux': require('../RD/linux/sidebar'),
+
 
     '/FE/VUE': require('../FE/VUE/sidebar'),
     '/FE/CSS': require('../FE/CSS/sidebar'),
