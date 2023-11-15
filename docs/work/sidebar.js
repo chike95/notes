@@ -1,7 +1,7 @@
 module.exports = [
 
     {
-        title: '硬件调试',
+        title: '硬件测试',
         path: '/work/hardware/',
         collapsable: true,
         sidebarDepth: 2,
@@ -11,7 +11,7 @@ module.exports = [
         ]
     },
     {
-        title: '软件调试',
+        title: '软件测试',
         path: '/work/software/',
         collapsable: true,
         sidebarDepth: 1,
@@ -23,6 +23,12 @@ module.exports = [
     {
         title: '网络设备',
         path: '/work/devices/net',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
+    {
+        title: '调试系统',
+        path: '/work/debug/',
         collapsable: true,
         sidebarDepth: 2,
     },
