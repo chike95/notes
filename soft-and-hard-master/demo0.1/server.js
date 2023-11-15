@@ -2,9 +2,9 @@ var fs = require('fs');
 var http = require('http');
 var net = require('net');
 var HTTP_PORT = "8000";
-var TCP_PORT = "9000"
-var TIMEOUT = 30*1000;//tcp客户端超过30秒没发数据判为超时并断开连接
-var tcpClient=null;//tcp客户端
+var TCP_PORT = "9002"
+var TIMEOUT = 30 * 1000;//tcp客户端超过30秒没发数据判为超时并断开连接
+var tcpClient = null;//tcp客户端
 
 // 创建http server，并传入回调函数:
 var httpServer = http.createServer(function (request, response) {
@@ -32,12 +32,12 @@ var httpServer = http.createServer(function (request, response) {
       var data = getData() || "无数据";
 
       var addr = "无连接";
-      if(tcpClient && tcpClient.addr){
+      if (tcpClient && tcpClient.addr) {
         addr = tcpClient.addr
       }
-      
+
       // 将结果转换成字符串再发出去
-      var result = JSON.stringify({addr:addr,data:data});
+      var result = JSON.stringify({ addr: addr, data: data });
       response.end(result);
       break;
     default:
@@ -52,56 +52,56 @@ httpServer.on('error', onError);
 httpServer.on('listening', onListening);
 
 //创建TCP服务器
-var tcpServer = net.createServer((socket)=>{
+var tcpServer = net.createServer((socket) => {
   //connect
   var addr = socket.remoteAddress + ':' + socket.remotePort
-  console.log(addr," connect.",socket)
+  console.log(addr, " connect.", socket)
   socket.addr = addr
   tcpClient = socket
 
   // recieve data
-  socket.on("data",data=>{
-    var str = addr+" --> " + data.toString('ascii') + '\n'
+  socket.on("data", data => {
+    var str = addr + " --> " + data.toString('ascii') + '\n'
     console.log(str)
     socket.lastValue = data.toString('ascii')
   })
 
   // close
-  socket.on('close',()=>{
-    console.log(addr,"close")
+  socket.on('close', () => {
+    console.log(addr, "close")
     tcpClient = null;
   })
 
-  socket.on('error',(err)=>{
-    console.log("error",err)
+  socket.on('error', (err) => {
+    console.log("error", err)
     tcpClient = null;
   })
 
   socket.setTimeout(TIMEOUT);
-	// 超过一定时间 没接收到数据，就主动断开连接。
-	socket.on('timeout', () => {
-		console.log(socket.id,socket.addr,'socket timeout');
+  // 超过一定时间 没接收到数据，就主动断开连接。
+  socket.on('timeout', () => {
+    console.log(socket.id, socket.addr, 'socket timeout');
     socket.end();
     tcpClient = null;
-	});
+  });
 })
 
-tcpServer.on("error",(err)=>{
+tcpServer.on("error", (err) => {
   console.log(err)
   tcpClient = null;
 })
 
-tcpServer.listen({port: TCP_PORT,host: '0.0.0.0'}, () => {
+tcpServer.listen({ port: TCP_PORT, host: '0.0.0.0' }, () => {
   console.log('demo0.1 tcp server running on', tcpServer.address())
 })
 
 // 开灯
 function openLed() {
   // 向TCP客户端发送1
-  if(tcpClient){
+  if (tcpClient) {
     tcpClient.write('1', 'ascii')
   }
-  else{
+  else {
     console.log("openLed error:not tcpClient.")
   }
 }
@@ -109,10 +109,10 @@ function openLed() {
 // 关灯
 function closeLed() {
   // 向TCP客户端发送0
-  if(tcpClient){
+  if (tcpClient) {
     tcpClient.write('0', 'ascii')
   }
-  else{
+  else {
     console.log("closeLed error:not tcpClient.")
   }
 }
@@ -120,10 +120,10 @@ function closeLed() {
 // 获取数据
 function getData() {
   // 获取设备最新数据
-  if(tcpClient){
+  if (tcpClient) {
     return tcpClient.lastValue
   }
-  else{
+  else {
     console.log("getData error:not tcpClient.")
   }
 

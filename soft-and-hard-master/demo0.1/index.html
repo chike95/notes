@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>软硬结合demo0.1</title>
+    <title>案例实现：网页控制小灯</title>
 </head>
+
 <body>
-    <h1>软硬结合demo0.1</h1>
-    <div>设备地址：<p id="equipment-addr" style="display: inline;">无连接</p></div>
-    <div>最新数据：<p id="equipment-data" style="display: inline;">无数据</p></div>
+    <h1>案例实现：网页控制小灯</h1>
+    <div>设备地址：<p id="equipment-addr" style="display: inline;">无连接</p>
+    </div>
+    <div>最新数据：<p id="equipment-data" style="display: inline;">无数据</p>
+    </div>
     <button id="open">开灯</button>
     <button id="close">关灯</button>
     <script>
@@ -28,8 +32,8 @@
         }
 
         // 为按钮添加事件
-        document.getElementById("open").addEventListener("click",open)
-        document.getElementById("close").addEventListener("click",close)
+        document.getElementById("open").addEventListener("click", open)
+        document.getElementById("close").addEventListener("click", close)
 
         // 获取数据函数，发起请求 GET /data
         function getData() {
@@ -46,7 +50,8 @@
             oReq.send();
         }
         //HTTP 轮询：每一秒拿一次数据。
-        setInterval(getData,1000)
+        setInterval(getData, 1000)
     </script>
 </body>
+
 </html>
