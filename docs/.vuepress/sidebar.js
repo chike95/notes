@@ -1,5 +1,7 @@
 module.exports = {
     // '/guide/': require('../guide/sidebar'),
+
+    '/EE/comm': require('../EE/comm/sidebar'),
     '/EE/components': require('../EE/components/sidebar'),
     '/EE/DB': require('../EE/DB/sidebar'),
     '/EE/dev': require('../EE/dev/sidebar'),

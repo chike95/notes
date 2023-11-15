@@ -12,11 +12,11 @@ module.exports = [
     },
     {
         title: '软件调试',
-        path: '/work/sofeware/',
+        path: '/work/software/',
         collapsable: true,
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         children: [
-            '/work/deploy/windows_env',
+            '/work/software/strain',
             '/work/deploy/ubuntu_env',
         ]
     },

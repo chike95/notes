@@ -1,7 +1,7 @@
 module.exports = [
     {
-        title: 'DHT11',
-        path: '/EE/components/dht11',
+        title: 'rs485',
+        path: '/EE/comm/rs485',
         collapsable: true,
         sidebarDepth: 2,
         // children: [
@@ -13,13 +13,5 @@ module.exports = [
         path: '/EE/components/oled',
         collapsable: true,
         sidebarDepth: 2,
-    }, {
-        title: 'Max485',
-        path: '/EE/components/max485',
-        collapsable: true,
-        sidebarDepth: 2,
-        // children: [
-        //     '/FE/VUE/base'
-        // ]
-    },
+    }
 ]

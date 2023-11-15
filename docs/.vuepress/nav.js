@@ -2,6 +2,7 @@ module.exports = [
     {
         text: '硬件开发', link: '/EE/',
         items: [
+            { text: '通信原理', link: '/EE/comm/' },
             { text: '元器件', link: '/EE/components/' },
             { text: '开发板', link: '/EE/DB/' },
             { text: '开发环境', link: '/EE/dev/' },
