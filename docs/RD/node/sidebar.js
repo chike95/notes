@@ -25,5 +25,17 @@ module.exports = [
         path: '/RD/node/04_fs',
         collapsable: true,
         sidebarDepth: 2,
-    }
+    },
+    {
+        title: 'HTTP',
+        path: '/RD/node/http',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
+    {
+        title: '功能代码',
+        path: '/RD/node/code',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
 ]
