@@ -28,7 +28,7 @@ module.exports = [
         ]
     },
     {
-        text: '研究学习', link: '/study/',
+        text: '学习', link: '/study/',
     },
     {
         text: '工作', link: '/work/',
