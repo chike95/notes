@@ -19,4 +19,8 @@ module.exports = {
     '/study/': require('../study/sidebar'),
 
     '/work/': require('../work/sidebar'),
+
+
+    '/thought/zhuangzhou/': require('../thought/zhuangzhou/sidebar'),
+    '/thought/chaos/': require('../thought/chaos/sidebar'),
 }	

@@ -1,6 +1,6 @@
 module.exports = [
     {
-        text: '硬件开发', link: '/EE/',
+        text: '硬件', link: '/EE/',
         items: [
             { text: '通信原理', link: '/EE/comm/' },
             { text: '元器件', link: '/EE/components/' },
@@ -33,4 +33,21 @@ module.exports = [
     {
         text: '工作', link: '/work/',
     },
+    {
+        text: '经济', link: '/economy/',
+    },
+    {
+        text: '政治', link: '/political/',
+    },
+    {
+        text: '历史', link: '/history/',
+    },
+    {
+        text: '思想',
+        items: [
+            { text: '庄周', link: '/thought/zhuangzhou/' },
+            { text: '混沌理论', link: '/thought/chaos/' },
+        ]
+    },
+
 ]
