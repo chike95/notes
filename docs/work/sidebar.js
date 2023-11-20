@@ -17,6 +17,7 @@ module.exports = [
         sidebarDepth: 1,
         children: [
             '/work/software/485',
+            '/work/software/data',
             '/work/software/strain',
         ]
     },
