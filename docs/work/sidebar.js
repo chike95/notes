@@ -16,8 +16,8 @@ module.exports = [
         collapsable: true,
         sidebarDepth: 1,
         children: [
+            '/work/software/485',
             '/work/software/strain',
-            '/work/deploy/ubuntu_env',
         ]
     },
     {
