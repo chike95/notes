@@ -31,6 +31,12 @@ module.exports = [
         path: '/RD/node/http',
         collapsable: true,
         sidebarDepth: 2,
+    }, {
+
+        title: 'TCP',
+        path: '/RD/node/tcp',
+        collapsable: true,
+        sidebarDepth: 2,
     },
     {
         title: '功能代码',
