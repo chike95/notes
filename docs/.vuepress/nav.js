@@ -11,6 +11,7 @@ module.exports = [
     {
         text: '前端',
         items: [
+            { text: '相关技术', link: '/FE/others/' },
             { text: 'HTML', link: '/FE/HTML/' },
             { text: 'CSS', link: '/FE/CSS/' },
             { text: 'JS', link: '/FE/JS/' },

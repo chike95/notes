@@ -15,6 +15,7 @@ module.exports = {
 
     '/FE/VUE': require('../FE/VUE/sidebar'),
     '/FE/CSS': require('../FE/CSS/sidebar'),
+    '/FE/others': require('../FE/others/sidebar'),
 
     '/study/': require('../study/sidebar'),
 
