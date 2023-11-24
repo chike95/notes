@@ -14,11 +14,12 @@ module.exports = [
         title: '软件测试',
         path: '/work/software/',
         collapsable: true,
-        sidebarDepth: 1,
+        sidebarDepth: 2,
         children: [
             '/work/software/485',
             '/work/software/data',
             '/work/software/strain',
+            '/work/software/485horizontal',
         ]
     },
     {
