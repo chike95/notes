@@ -42,11 +42,12 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
+    console.log(req.url);
     res.send('hello world')
 })
 
-app.listen(3000, () => {
-    console.log('run 127.0.0.1:3000');
+app.listen(3006, () => {
+    console.log('running: 127.0.0.1:3006');
 })
 ```
 
@@ -126,6 +127,66 @@ app.set('port', port);
 
 
 ## 基本使用
+
+### 获取内容
+
+app.js
+
+```js
+const express = require('express')
+const fs = require('fs')
+const { promisify } = require('util')
+
+const readFile = promisify(fs.readFile)
+
+const app = express()
+
+app.get('/', async function (req, res) {
+    let back = await readFile('./db.json', 'utf8')
+    try {
+        let back = await readFile('./db.json', 'utf8')
+        const obj = JSON.parse(back)
+        res.send(obj.users)
+    } catch (error) {
+        res.status(500).json({ error })
+    }
+})
+
+app.listen(3006, () => {
+    console.log('running: 127.0.0.1:3006');
+})
+```
+
+db.json
+
+```json
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John",
+            "email": "john@gmail.com"
+        },
+        {
+            "id": 2,
+            "name": "Doe",
+            "email": "doe@gmail.com"
+        }
+    ],
+    "video": []
+}
+```
+
+页面输出
+
+[{"id":1,"name":"John","email":"john@gmail.com"},{"id":2,"name":"Doe","email":"doe@gmail.com"}]
+
+### 添加内容
+
+
+
+### 删除内容
+
 
 
 
