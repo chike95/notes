@@ -31,6 +31,12 @@ module.exports = [
         path: '/RD/node/http',
         collapsable: true,
         sidebarDepth: 2,
+    },
+    {
+        title: 'Express',
+        path: '/RD/node/express',
+        collapsable: true,
+        sidebarDepth: 2,
     }, {
 
         title: 'TCP',
