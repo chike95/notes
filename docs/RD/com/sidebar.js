@@ -9,8 +9,8 @@ module.exports = [
         // ]
     },
     {
-        title: 'Spring Boot',
-        path: '/RD/java/01_config',
+        title: 'tcp',
+        path: '/RD/com/tcp',
         collapsable: true,
         sidebarDepth: 2,
         // children: [
