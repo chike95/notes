@@ -37,7 +37,14 @@ module.exports = [
         path: '/RD/node/express',
         collapsable: true,
         sidebarDepth: 2,
-    }, {
+    },
+    {
+        title: 'KOA2',
+        path: '/RD/node/koa2',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
+    {
 
         title: 'TCP',
         path: '/RD/node/tcp',
