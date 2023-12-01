@@ -4,6 +4,7 @@ module.exports = [
         collapsable: true,
         sidebarDepth: 2,
         children: [
+            '/study/0',
             '/study/1'
         ]
     },

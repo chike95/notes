@@ -34,21 +34,21 @@ module.exports = [
     {
         text: '工作', link: '/work/',
     },
-    {
-        text: '经济', link: '/economy/',
-    },
-    {
-        text: '政治', link: '/political/',
-    },
-    {
-        text: '历史', link: '/history/',
-    },
-    {
-        text: '思想',
-        items: [
-            { text: '庄周', link: '/thought/zhuangzhou/' },
-            { text: '混沌理论', link: '/thought/chaos/' },
-        ]
-    },
+    // {
+    //     text: '经济', link: '/economy/',
+    // },
+    // {
+    //     text: '政治', link: '/political/',
+    // },
+    // {
+    //     text: '历史', link: '/history/',
+    // },
+    // {
+    //     text: '思想',
+    //     items: [
+    //         { text: '庄周', link: '/thought/zhuangzhou/' },
+    //         { text: '混沌理论', link: '/thought/chaos/' },
+    //     ]
+    // },
 
 ]
