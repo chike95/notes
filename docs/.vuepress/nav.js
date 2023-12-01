@@ -16,6 +16,7 @@ module.exports = [
             { text: 'CSS', link: '/FE/CSS/' },
             { text: 'JS', link: '/FE/JS/' },
             { text: 'VUE', link: '/FE/VUE/' },
+            { text: 'WEB_3D', link: '/FE/WEB_3D/' },
         ]
     },
     {
