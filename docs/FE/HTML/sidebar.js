@@ -13,17 +13,11 @@ module.exports = [
         path: '/FE/HTML/02_page',
         collapsable: true,
         sidebarDepth: 2,
-        // children: [
-        //     '/FE/VUE/base'
-        // ]
     },
     {
         title: '文本相关',
         path: '/FE/HTML/03_text',
         collapsable: true,
         sidebarDepth: 2,
-        // children: [
-        //     '/FE/VUE/base'
-        // ]
     },
 ]
