@@ -14,6 +14,7 @@ module.exports = {
 
 
     '/FE/VUE': require('../FE/VUE/sidebar'),
+    '/FE/HTML': require('../FE/HTML/sidebar'),
     '/FE/CSS': require('../FE/CSS/sidebar'),
     '/FE/WEB_3D': require('../FE/WEB_3D/sidebar'),
     '/FE/others': require('../FE/others/sidebar'),

@@ -1,7 +1,7 @@
 module.exports = [
     {
-        title: '安装配置',
-        path: '/RD/java/01_base',
+        title: '基础知识',
+        path: '/FE/HTML/01_base',
         collapsable: true,
         sidebarDepth: 2,
         // children: [
