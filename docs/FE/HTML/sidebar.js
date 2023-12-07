@@ -9,8 +9,8 @@ module.exports = [
         // ]
     },
     {
-        title: 'Element Plus',
-        path: '/FE/CSS/elem',
+        title: '页面结构',
+        path: '/FE/HTML/02_page',
         collapsable: true,
         sidebarDepth: 2,
         // children: [
