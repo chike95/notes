@@ -20,4 +20,10 @@ module.exports = [
         collapsable: true,
         sidebarDepth: 2,
     },
+    {
+        title: '图片处理',
+        path: '/FE/HTML/04_picture',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
 ]
