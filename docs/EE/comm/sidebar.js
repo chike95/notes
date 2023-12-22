@@ -9,8 +9,8 @@ module.exports = [
         // ]
     },
     {
-        title: 'OLED',
-        path: '/EE/components/oled',
+        title: 'MODBUS',
+        path: '/EE/comm/modbus',
         collapsable: true,
         sidebarDepth: 2,
     }

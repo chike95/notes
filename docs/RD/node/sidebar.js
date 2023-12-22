@@ -56,5 +56,10 @@ module.exports = [
         path: '/RD/node/code',
         collapsable: true,
         sidebarDepth: 2,
+    }, {
+        title: 'Git',
+        path: '/RD/node/git',
+        collapsable: true,
+        sidebarDepth: 2,
     },
 ]

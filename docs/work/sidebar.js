@@ -11,7 +11,7 @@ module.exports = [
         ]
     },
     {
-        title: '软件测试',
+        title: '系统集成',
         path: '/work/software/',
         collapsable: true,
         sidebarDepth: 2,
@@ -20,6 +20,8 @@ module.exports = [
             '/work/software/data',
             '/work/software/strain',
             '/work/software/485horizontal',
+            '/work/software/explorer',
+            '/work/software/function',
         ]
     },
     {
