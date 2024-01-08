@@ -45,6 +45,12 @@ module.exports = [
         sidebarDepth: 2,
     },
     {
+        title: '项目实战',
+        path: '/RD/node/koa-api',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
+    {
 
         title: 'TCP',
         path: '/RD/node/tcp',
