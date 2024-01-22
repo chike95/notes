@@ -67,5 +67,10 @@ module.exports = [
         path: '/RD/node/git',
         collapsable: true,
         sidebarDepth: 2,
+    }, {
+        title: 'nodemailer',
+        path: '/RD/node/nodemailer',
+        collapsable: true,
+        sidebarDepth: 2,
     },
 ]
