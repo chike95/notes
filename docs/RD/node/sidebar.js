@@ -39,10 +39,13 @@ module.exports = [
         sidebarDepth: 2,
     },
     {
-        title: 'KOA2',
-        path: '/RD/node/koa2',
+        title: 'KOA',
+        path: '/RD/node/koa/',
         collapsable: true,
         sidebarDepth: 2,
+        children: [
+            '/RD/node/koa/koa2-sina'
+        ]
     },
     {
         title: '项目实战',
