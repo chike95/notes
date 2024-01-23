@@ -1,11 +1,163 @@
 # Ubuntu服务器
 
-## 一、ubuntu安装
-镜像源：<https://blog.csdn.net/lx7820336/article/details/124703404>
+## 一、系统安装安装
+
+阿里源：<https://blog.csdn.net/lx7820336/article/details/124703404>
+
+版本： Ubuntu 16.04.3 Server
+
+1. 选择系统语言-English
+
+![Alt text](./img/1601.png)
+
+2. 选择操作-Install Ubuntu Server
+
+![Alt text](./img/1602.png)
+
+3. 选择安装过程和系统的默认语言-English
+
+![Alt text](./img/1603.png)
+
+4.选择区域-other
+
+![Alt text](./img/1604.png)
+
+5. 选择亚洲-Asia
+
+![Alt text](./img/1605.png)
+
+6. 选择国家-China
+
+![Alt text](./img/1606.png)
+
+7. 选择字符集编码-United States
+
+![Alt text](./img/1607.png)
+
+8. 是否检测键盘布局，选择No
+
+![Alt text](./img/1608.png)
+
+9. 选择键盘类型-English (US)
+
+![Alt text](./img/1609.png)
+
+10.选择键盘布局-English (US)
+
+![Alt text](./img/1610.png)
+
+11. 配置网络，选择Continue
+
+![Alt text](./img/1611.png)
+
+12. 选择手动配置网络-configure network manually
+
+![Alt text](./img/1612.png)
+
+13. 设置主机ip: 192.168.30.100
+
+![Alt text](./img/1613.png)
+
+14. 设置主机子网掩码: 255.255.255.0
+
+![Alt text](./img/1614.png)
+
+15. 设置主机网关: 192.168.30.1
+
+![Alt text](./img/1615.png)
+
+16. 设置主机dns: 192.168.30.1
+
+![Alt text](./img/1616.png)
+
+17. 设置主机名(项目名称-taizhou)
+
+![Alt text](./img/1617.png)
+
+18. 设置域名-可以选择不填，直接Continue
+
+![Alt text](./img/1618.png)
+
+19. 设置用户名（tonglei）-Continue
+
+![Alt text](./img/1619.png)
+
+20. 设置登陆账号（tonglei）-Continue
+
+![Alt text](./img/1620.png)
+
+21. 设置登录密码（空格选择“Show Password in Clear”可以显示密码）-Continue
+
+![Alt text](./img/1621.png)
+
+22. 重复上一步设置的登录密码-Continue
+
+23. 是否使用弱密码，选择是-Yes
+
+![Alt text](./img/1623.png)
+
+24. 是否加密home文件夹，选择否-No
+
+![Alt text](./img/1624.png)
+
+25. 确认时区是否正确(这里是“Asia/Shanghai”或者“Asia/Shanghai”都可以)，选择是-Yes
+
+![Alt text](./img/1625.png)
+
+26. 选择分区方式(分区向导-使用整个磁盘和设置逻辑分区LVM)-“Guided-use entire disks and set up LVM”
+
+也可以不分区：“Guided-use entire disk”
+
+![Alt text](./img/1626.png)
+
+27. 选择要分区的磁盘(这里只有一块)-“SCSI3 （0,0,0）(sda) -53.7GB VMware Virtual disk”
+
+![Alt text](./img/1627.png)
+
+28. 是否将变更写入磁盘，选择是-Yes
+
+![Alt text](./img/1628.png)
+
+29. 用于指导分区的卷组数量,默认即可，选择-Continue
+
+![Alt text](./img/1629.png)
+
+30. 是否写入变更的磁盘，选择是-Yes
+
+![Alt text](./img/1630.png)
+
+31. 设置HTTP代理，无需填写直接下一步-Continue
+
+![Alt text](./img/1631.png)
+
+32. 设置系统升级方式，选择没有自动更新-No automatic updates
+
+![Alt text](./img/1632.png)
+
+33. 选择要安装的软件，选择：lamp server 和 OpenSSH Server，然后下一步-Continue
+
+![Alt text](./img/1633.png)
+
+34. 是否安装GRUB引导程序，选择是-Yes
+
+![Alt text](./img/1634.png)
+
+35.完成安装，选择下一步-Continue
+
+![Alt text](./img/1635.png)
+
+36.系统安装完会自动启动主机
+
+![Alt text](./img/1636.png)
+
+37.输入设置好的登录账户和密码就可以开始使用了
+
+![Alt text](./img/1637.png)
 
 ## 二、环境搭建
 
 ### 2.1 jdk1.8
+
 教程：<https://developer.aliyun.com/article/704959>
 
 #### 2.1.1 apt 安装
