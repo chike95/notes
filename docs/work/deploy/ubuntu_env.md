@@ -1,10 +1,10 @@
 # Ubuntu服务器
 
-## 一、系统安装安装
+## 一、系统安装
 
 阿里源：<https://blog.csdn.net/lx7820336/article/details/124703404>
 
-版本： Ubuntu 16.04.3 Server
+### 1.1 Ubuntu Server
 
 1. 选择系统语言-English
 
