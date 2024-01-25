@@ -37,13 +37,14 @@ module.exports = [
         sidebarDepth: 2,
     },
     {
-        title: '项目部署',
-        path: '/work/deploy/',
+        title: 'Ubuntu 部署',
+        path: '/work/deploy/ubuntu/',
         collapsable: true,
         sidebarDepth: 2,
         children: [
-            '/work/deploy/windows_env',
-            '/work/deploy/ubuntu_env',
+            '/work/deploy/ubuntu/01_system',
+            '/work/deploy/ubuntu/02_dev',
+            '/work/deploy/ubuntu/03_config',
         ]
     },
 ]

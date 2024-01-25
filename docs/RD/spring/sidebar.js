@@ -23,10 +23,14 @@ module.exports = [
             '/RD/spring/itheima_spring/01_base'
         ]
     },
-    // {
-    //     title: '源码解析',
-    //     path: '/RD/spring/source/',
-    //     collapsable: true,
-    //     sidebarDepth: 2,
-    // },
+    {
+        title: 'SpringBoot+Vue全栈开发',
+        path: '/RD/spring/liulaoshi/',
+        collapsable: true,
+        sidebarDepth: 2,
+        children: [
+            '/RD/spring/liulaoshi/01_env',
+            '/RD/spring/liulaoshi/02_start',
+        ]
+    },
 ]
