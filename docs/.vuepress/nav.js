@@ -27,6 +27,7 @@ module.exports = [
             { text: 'Java', link: '/RD/java/' },
             { text: 'Spring', link: '/RD/spring/' },
             { text: 'Linux', link: '/RD/linux/' },
+            { text: '工具', link: '/RD/tools/' },
         ]
     },
     {
