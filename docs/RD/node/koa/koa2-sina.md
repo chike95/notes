@@ -235,11 +235,452 @@ cnpm i cross-env -D
 +-- package-lock.json     // 存储项目依赖的版本信息，确保项目内的每个人安装的版本一致
 ```
 
+新建src目录，将public routers views app.js放入src目录中，并修改www.js，使其能够正确引用src目录中的代码。
+```
+var app = require('../src/app');
+```
 
+github提交：refactor 调整目录结构
 
 #### 2.2.3 开发路由
 
+（1）GET 方法获取动态参数
 
+```js
+router.get('/profile/:userName', async (ctx, next) => {
+  const { userName } = ctx.params;
+  ctx.body = {
+    title: 'this is profile page',
+    userName
+  }
+})
+```
+
+  http://localhost:3000/profile/lisi
+
+  {
+    "title": "this is profile page",
+    "userName": "lisi"
+  }
+
+```js
+router.get('/loadMore/:userName/:pageIndex', async (ctx, next) => {
+  const { userName, pageIndex } = ctx.params;
+  ctx.body = {
+    title: 'this is loadMore page',
+    userName,
+    pageIndex
+  }
+})
+```
+
+  http://localhost:3000/loadMore/zhangsan/3
+
+  {
+    "title": "this is loadMore page",
+    "userName": "zhangsan",
+    "pageIndex": "3"
+  }
+
+
+（2）Post 方法获取动态参数
+```js
+router.post('/login', async (ctx, next) => {
+  const { userName, password } = ctx.request.body
+  ctx.body = {
+    tag: 100,
+    userName,
+    password
+  }
+})
+```
+
+测试（postman）：http://localhost:3000/users/login
+
+{
+    "userName": "zhangsan",
+    "password": "Aa112211"
+}
+
+结果:
+{
+    "tag": 100,
+    "userName": "zhangsan",
+    "password": "Aa112211"
+}
+
+github提交；feat：路由的演示
+ 
 ### 2.3 EJS
+
+#### 2.3.1 变量
+
+<%= title %>
+
+
+
+#### 2.3.2 条件
+
+```ejs
+<% if (isMe){ %>
+  <a href="#">@ 提到我的(3)</a>
+<% } %>
+```
+
+
+#### 2.3.3 组件
+
+  <%- include('widgets/user-info',{ isMe }) %>
+
+
+
+#### 2.3.4 循环
+```
+blogList: [
+  {
+    id: 1,
+    title: 'hello'
+  }, {
+    id: 2,
+    title: "hi"
+  }
+]
+```
+
+<%- include('widgets/blog-list', {blogList}) %>
+```
+<ul>
+    <% blogList.forEach(blog=> { %>
+        <li data-id="<%=blog.id %>">
+            <%= blog.title %>
+        </li>
+        <% }) %>
+</ul>
+```
+
+### 2.4 Mysql
+
+users 表：
+
+![Alt text](./img/users-table.png)
+
+
+blogs 表：
+
+![Alt text](./img/blogs-table.png)
+
+
+#### 基本sql语句
+
+use koa2_weibo_code;
+
+select * from users;
+
+select * from blogs;
+
+#### 增删改查
+
+增加：
+
+insert into users(username, `password`, nickname) values('zhansan', '124', '张三');
+
+删除：
+
+delete from blogs where id='3'; 
+
+更新：
+
+update blogs set content='内容1内容1' where id='1';
+
+查询：
+
+select * from users order by id desc;
+
+select username, nickname from users where username='zhangsan'and`password`='124';
+
+  
+
+#### 查询总数，分页
+
+查询总数：
+
+select count(id) as sum from blogs;
+
+分页：
+
+select * from blogs order by id desc limit 2 offset 0;
+
+#### 外键
+
+创建
+
+![Alt text](./img/foreign-key.png)
+
+
+
+
+更新限制 & 删除级联
+
+insert into blogs(title, content, userid) values('标题7','内容7', 4);
+
+插入不存在的id，会报错
+
+delete from users where id=2; 
+ 
+删除id=2的user，会删除关联的blog
+
+
+
+联表查询
+
+select * from blogs inner join users on users.id = blogs.userid;
+
+![Alt text](./img/lianbiao.png)
+
+
+select blogs.* ,users.username, users.nickname from blogs inner join users on users.id = blogs.userid;
+
+![Alt text](./img/lianbiao2.png)
+
+select blogs.* ,users.username, users.nickname from blogs inner join users on users.id = blogs.userid where users.username = 'lisi'
+
+![Alt text](./img/lianbiao3.png)
+
+
+
+
+
+### sequelize
+
+官网：<https://www.sequelize.cn/>
+
+* 数据表，用js中的模型（class或对象）代替
+
+* 数据记录，用js中的对象或数组代替
+
+* sql语句，用对象方法代替
+
+cnpm i mysql2 sequelize
+
+测试
+```js
+const Sequelize = require('sequelize');
+
+const conf = {
+    host: 'localhost',
+    dialect: 'mysql',
+}
+const seq = new Sequelize('koa2_weibo_code', 'root', '', conf)
+
+// 测试连接
+
+seq.authenticate().then(() => {
+    console.log('ok');
+}).catch(() => {
+    console.log('error');
+})
+```
+
+连接池代码：
+```js
+const mysql = require('mysql2');
+const Sequelize = require('sequelize');
+
+// 创建数据库连接池
+const pool = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'koa2_weibo_code',
+});
+
+// 封装数据库连接函数
+function connectToDatabase() {
+    return new Promise((resolve, reject) => {
+        pool.getConnection((err, connection) => { // 从连接池获取连接
+            if (err) reject(err);
+            else resolve(connection);  // 将连接对象传递给回调函数
+            console.log('成功连接到 MySQL');
+        });
+    });
+}
+
+connectToDatabase()
+```
+
+#### 建模 & 同步数据
+
+创建模型
+```js
+const Sequelize = require('sequelize');
+const seq = require('./seq');
+
+// 创建 User 模型，表名会是users
+const User = seq.define('user', {
+    // id会自动创建，并设为主键自增
+    userName: {
+        type: Sequelize.STRING, // varchar(255)
+        allowNull: false // 是否允许为空
+    },
+    password: {
+        type: Sequelize.STRING, // varchar(255)
+        allowNull: false // 是否允许为空
+    },
+    nickName: {
+        type: Sequelize.STRING, // varchar(255)
+        comment: '昵称'
+    }
+})
+module.exports = {
+    User
+}
+```
+![Alt text](./img/ertu.png)
+
+
+#### 基本操作
+
+写入数据
+```js
+const { Blog, User } = require('./model');
+
+!(async function () {
+    // 创建用户
+    const zhangsan = await User.create({
+        userName: 'zhangsan',
+        password: '123456',
+        nickName: "张三"
+    })
+
+    console.log('zhangsan: ', zhangsan.dataValues);
+})()
+```
+```
+zhangsan:  {
+  id: 2,
+  userName: 'zhangsan',
+  password: '123456',
+  nickName: '张三',
+  updatedAt: 2024-01-29T09:34:22.758Z,
+  createdAt: 2024-01-29T09:34:22.758Z
+}
+```
+
+查询数据
+
+```js
+const { Blog, User } = require('./model');
+
+!(async function () {
+    const zhangsan = await User.findOne({
+        where: {
+            userName: 'zhangsan'
+        }
+    })
+
+    console.log(zhangsan.dataValues);
+
+        // 查询特定的列
+    const zhangsan2 = await User.findOne({
+        attributes: ['userName', 'nickName'], // 指定要查询的列名数组，不指定则查询所有列
+        where: {
+            userName: 'zhangsan'
+        }
+    })
+    console.log(zhangsan2.dataValues);
+})()
+```
+```
+{
+  id: 1,
+  userName: 'zhangsan',
+  password: '123456',
+  nickName: '张三',
+  createdAt: 2024-01-29T09:44:09.000Z,
+  updatedAt: 2024-01-29T09:44:09.000Z
+}
+
+
+{ userName: 'zhangsan', nickName: '张三' }
+
+```
+
+```js
+// 查询一个列表
+const zhangsanBlogList = await Blog.findAll({
+    where: {
+        userId: zhangsan.dataValues.id
+    },
+    order: [
+        ['id', 'desc']
+    ]
+})
+console.log(zhangsanBlogList.map(blog => blog.dataValues));
+```
+```
+[
+  {
+    id: 2,
+    title: '标题2',
+    content: '内容2',
+    userId: 1,
+    createdAt: 2024-01-29T09:44:09.000Z,
+    updatedAt: 2024-01-29T09:44:09.000Z
+  },
+  {
+    id: 1,
+    title: '标题A',
+    content: '内容A',
+    userId: 1,
+    createdAt: 2024-01-29T09:44:09.000Z,
+    updatedAt: 2024-01-29T09:44:09.000Z
+  }
+]
+
+```
+
+分页
+```js
+//分页
+const blogPageList = await Blog.findAll({
+    limit: 3,
+    offset: 0
+})
+console.log(blogPageList.map(blog => blog.dataValues));
+```
+
+总数
+```js
+// 查询总数
+const blogLsitAndCount = await Blog.findAndCountAll({
+    limit: 2,
+    offset: 0,
+    order: [
+        ['id', 'desc']
+    ]
+})
+console.log(blogLsitAndCount.count, blogLsitAndCount.rows.map(blog => blog.dataValues));
+```
+```
+20 [
+  {
+    id: 20,
+    title: '标题4',
+    content: '内容4',
+    userId: 10,
+    createdAt: 2024-01-29T09:55:55.000Z,
+    updatedAt: 2024-01-29T09:55:55.000Z
+  },
+  {
+    id: 19,
+    title: '标题3',
+    content: '内容3',
+    userId: 10,
+    createdAt: 2024-01-29T09:55:55.000Z,
+    updatedAt: 2024-01-29T09:55:55.000Z
+  }
+]
+```
+
 
 

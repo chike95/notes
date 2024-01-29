@@ -3,7 +3,7 @@ module.exports = [
         title: 'mysql',
         path: '/RD/tools/mysql/',
         collapsable: true,
-        sidebarDepth: 2,
+        sidebarDepth: 3,
         children: [
             '/RD/tools/mysql/base',
             // '/RD/tools/mysql/',
