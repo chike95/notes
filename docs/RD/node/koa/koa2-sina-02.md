@@ -1,111 +1,14 @@
-# 实战：从零模拟新浪微博
+# 二、技术选型和知识点介绍
 
-Node.js-Koa2框架生态实战－从零模拟新浪微博
+    本章内容:
 
-“双越”老师出品，纯实战的Node.js进阶课程
+    * 技术选型概述
 
-地址：<https://coding.imooc.com/class/388.html>
+    * 知识点介绍
 
-## 一、项目分析
+    * 产出：koa2开发环境
 
-课程涉及的知识点
-
-![Alt text](./img/study.png)
-
-### 1.1 项目架构
-
-![Alt text](./img/jiagou.png)
-
-### 1.2 课程安排
-
-主要包含六个方面的内容：
-
-    技术选型
-
-    知识点串讲
-
-    技术方案设计
-
-    功能开发
-
-    线上环境
-
-    总结最佳实践
-
-#### 1.2.1 技术选型
-
-* 框架
-
-* 存储和缓存
-
-* 用户认证
-
-#### 1.2.2 知识点串讲
-
-* koa2 和 ejs模板
-
-* mysql 和 sequelize
-
-* redis
-
-* session 和 jwt
-
-* jest 单元测试
-
-* eslint 和 inspect debug
-
-
-#### 1.2.3 技术方案设计
-
-* 架构设计
-
-* 接口和路由
-
-* 数据表和存储模型
-
-
-#### 1.2.4 功能开发
-
-* 用户：登录、注册、用户设置、粉丝和关注
-
-* 微博：发布、列表（首页、个人主页、广场页）
-
-* @ 功能： @某人、回复、接受@我的消息
-
-#### 1.2.5 线上环境
-
-* pm2 和多线程
-
-* nginx 和反向代理
-
-* 日志
-
-#### 1.2.6 总结最佳实践
-
-* 项目结构
-
-* 错误处理
-
-* 代码风格
-
-* 质量保证
-
-* 安全
-
-* 线上环境
-
-
-## 二、技术选型和知识点介绍
-
-本章内容
-
-    技术选型概述
-
-    知识点介绍
-
-    产出：koa2开发环境
-
-### 2.1 技术选型概述
+## 2.1 技术选型概述
 
 #### 框架选型
 
@@ -142,9 +45,9 @@ jest
 
 
 
-### 2.2 KOA2
+## 2.2 KOA2
 
-#### 2.2.1 项目创建
+### 2.2.1 项目创建
 
 （1）koa-generator
 
@@ -211,7 +114,7 @@ cnpm i cross-env -D
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```
-#### 2.2.2 代码结构
+### 2.2.2 代码结构
 
 目录结构
 ```
@@ -242,7 +145,7 @@ var app = require('../src/app');
 
 github提交：refactor 调整目录结构
 
-#### 2.2.3 开发路由
+### 2.2.3 开发路由
 
 （1）GET 方法获取动态参数
 
@@ -311,15 +214,15 @@ router.post('/login', async (ctx, next) => {
 
 github提交；feat：路由的演示
  
-### 2.3 EJS
+## 2.3 EJS
 
-#### 2.3.1 变量
+#### 变量
 
 <%= title %>
 
 
 
-#### 2.3.2 条件
+#### 条件
 
 ```ejs
 <% if (isMe){ %>
@@ -328,13 +231,13 @@ github提交；feat：路由的演示
 ```
 
 
-#### 2.3.3 组件
+#### 组件
 
   <%- include('widgets/user-info',{ isMe }) %>
 
 
 
-#### 2.3.4 循环
+#### 循环
 ```
 blogList: [
   {
@@ -358,7 +261,7 @@ blogList: [
 </ul>
 ```
 
-### 2.4 Mysql
+## 2.4 Mysql
 
 users 表：
 
@@ -450,7 +353,7 @@ select blogs.* ,users.username, users.nickname from blogs inner join users on us
 
 
 
-### sequelize
+## 2.5 Sequelize
 
 官网：<https://www.sequelize.cn/>
 
@@ -508,7 +411,7 @@ function connectToDatabase() {
 connectToDatabase()
 ```
 
-#### 建模 & 同步数据
+### 2.5.1 建模 & 同步数据
 
 创建模型
 ```js
@@ -538,7 +441,7 @@ module.exports = {
 ![Alt text](./img/ertu.png)
 
 
-#### 基本操作
+### 2.5.2 基本操作
 
 写入数据
 ```js
@@ -681,6 +584,111 @@ console.log(blogLsitAndCount.count, blogLsitAndCount.rows.map(blog => blog.dataV
   }
 ]
 ```
+
+## 2.6 Redis
+
+【GeekHour】一小时Redis教程:
+
+<https://www.bilibili.com/video/BV1Jj411D7oG/>
+
+课程：第3章 技术选型和知识点介绍[下]
+
+redis：内存数据库（缓存）
+
+mysql：磁盘数据库
+
+适用：公共数据，秒杀，热点数据，读多写少，微博广场页，数据一致，session
+
+### 2.6.1 下载安装
+
+windows：<https://github.com/tporadowski/redis/releases>
+
+默认端口：6379
+
+启动：redis-cli
+
+值类型：string
+
+设置值：set key value
+
+获取值：get key
+
+所有值：keys *
+
+删除值：del key
+
+### 2.6.2 nodejs操作redis
+
+/src/conf/db.js
+
+代码文件注释(js doc)
+```js
+/**
+ * @description 存储配置
+ * @author 夜枫林
+ */
+```
+
+
+/src/cache/_redis.js
+```js
+/**
+ * @description 连接 redis 的方法 get set
+ * @author 夜枫林
+ */
+```
+
+
+
+## 2.7 Cookie和Session
+
+![Alt text](./img/session.png)
+
+![Alt text](./img/sessionandredis.png)
+
+session数据隔离
+
+解决方案
+
+![Alt text](./img/webserver.png)
+
+* 将 web server 和 redis 拆分为两个单独的服务
+
+* 双方都是独立的，都是可扩展的(例如都扩展成集群)
+
+* (包括 mysql，也是一个单独的服务，也可扩展)
+
+为何 session 适合用 redis ?
+
+* session 访问频繁，对性能要求极高
+
+* session 可不考虑断电丢失数据的问题(内存的硬伤)
+
+* session 数据量不会太大(相比于 mysql中存储的数据)
+
+
+为何网站数据不适合用 redis ?
+
+操作频率不是太高(相比于 session 操作)
+
+断电不能丢失，必须保留
+
+数据量太大，内存成本太高
+
+
+
+### 2.7.1 session存储redis
+
+
+
+
+
+### 2.7.2 koa2中使用
+
+
+
+
+## 2.8 Jest
 
 
 

@@ -44,7 +44,17 @@ module.exports = [
         collapsable: true,
         sidebarDepth: 2,
         children: [
-            '/RD/node/koa/koa2-sina'
+            // '/RD/node/koa/koa2-sina'
+        ]
+    }, {
+        title: 'KOA2实战：从零模拟新浪微博',
+        path: '/RD/node/koa/',
+        collapsable: true,
+        sidebarDepth: 2,
+        children: [
+            '/RD/node/koa/koa2-sina-01',
+            '/RD/node/koa/koa2-sina-02',
+
         ]
     },
     {

@@ -8,4 +8,10 @@ module.exports = [
         //     '/FE/VUE/base'
         // ]
     },
+    {
+        title: '登录',
+        path: '/FE/others/login',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
 ]
