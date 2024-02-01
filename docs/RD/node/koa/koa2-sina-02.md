@@ -675,6 +675,19 @@ session数据隔离
 
 数据量太大，内存成本太高
 
+### jwt
+
+jwt - json web token
+
+用户认证成功之后，server返回一个加密的token给浏览器
+
+浏览器保存token，每次请求都带上这个token
+
+server验证token，如果有效，返回数据
+
+koa2 实现 jwt
+
+ 
 
 
 ### 2.7.1 session存储redis
@@ -690,5 +703,125 @@ session数据隔离
 
 ## 2.8 Jest
 
+
+定义：
+
+单个功能或者接口，给定输入，得到输出，查看输出是否符合预期
+
+需要手动编写用例代码，然后统一执行
+
+意义：能一次性执行所有单测，短时间内验证所有功能是否正常
+
+
+
+
+
+### 使用jest
+
+*.test.js文件
+
+/test/demo.test.js
+```js
+/**
+ * @description test demo
+ * @author 夜枫林
+ */
+
+function sum(a, b) {
+    return a + b
+}
+
+test(' 10 + 20 应该等于三十', () => {
+    const res = sum(10, 20)
+    expect(res).toBe(30)
+})
+
+```
+
+```
+Administrator@DESKTOP-7JI4F1U MINGW64 /d/project/koa2-weibo-code (main)
+$ npm run test
+
+> koa2-weibo-code@0.1.0 test
+> cross-env NODE_ENV=test jest --runInBand --forceExit --colors --detectOpenHandles
+
+ PASS  test/demo.test.js
+  √  10 + 20 应该等于三十 (4 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.822 s, estimated 1 s
+Ran all test suites.
+```
+
+
+
+常用的断言
+
+.toBe
+
+.not.toBe
+
+.toEqual
+
+.not.toEqual
+
+.toBeNull
+
+.toBeUndefined
+
+.toBeDefined
+
+
+测试http接口
+```
+$ cnpm i supertest --save-dev
+```
+
+
+### 完善开发环境
+
+#### Eslint
+.eslintrc.js
+```js
+{
+    "parser": "babel-eslint",
+    "env": {
+        "es6": true,
+        "commonjs": true,
+        "node": true
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "quotes": [
+            "error",
+            "single",
+            {
+                "allowTemplateLiterals": true
+            }
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
+    }
+}
+```
+
+```
+$ cnpm i eslint babel-eslint --save-dev
+```
+
+#### Inspect调试
+
+
+
+
+
+#### 404和错误页
 
 

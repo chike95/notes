@@ -54,6 +54,7 @@ module.exports = [
         children: [
             '/RD/node/koa/koa2-sina-01',
             '/RD/node/koa/koa2-sina-02',
+            '/RD/node/koa/koa2-sina-03',
 
         ]
     },
