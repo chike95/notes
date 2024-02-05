@@ -1,12 +1,12 @@
 module.exports = [
     {
-        title: 'Vue基础',
-        path: '/FE/VUE/base',
+        title: '理论知识',
+        path: '/FE/VUE/docs/',
         collapsable: true,
         sidebarDepth: 2,
-        // children: [
-        //     '/FE/VUE/base'
-        // ]
+        children: [
+            '/FE/VUE/docs/01_base'
+        ]
     },
     {
         title: 'VuePress',

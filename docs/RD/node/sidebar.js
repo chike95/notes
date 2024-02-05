@@ -46,8 +46,15 @@ module.exports = [
         children: [
             // '/RD/node/koa/koa2-sina'
         ]
-    }, {
-        title: 'KOA2实战：从零模拟新浪微博',
+    },
+    {
+        title: 'KOA2实战：打造API接口',
+        path: '/RD/node/koa-api',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
+    {
+        title: 'KOA2实战：模拟新浪微博',
         path: '/RD/node/koa/',
         collapsable: true,
         sidebarDepth: 2,
@@ -59,10 +66,14 @@ module.exports = [
         ]
     },
     {
-        title: '项目实战',
-        path: '/RD/node/koa-api',
+        title: 'KOA2全栈：开发当当书城',
+        path: '/RD/node/quanzhan/',
         collapsable: true,
         sidebarDepth: 2,
+        children: [
+            '/RD/node/quanzhan/webapp-01',
+            '/RD/node/quanzhan/webapp-02',
+        ]
     },
     {
 

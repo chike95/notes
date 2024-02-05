@@ -1,11 +1,25 @@
 module.exports = [
+
     {
-        title: '研究学习',
+        title: '庖丁解牛',
+        path: '/study/0',
         collapsable: true,
         sidebarDepth: 2,
+    },
+    {
+        title: '软硬结合-从零打造物联网',
+        path: '/study/1',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
+    {
+        title: '全栈开发-后台管理系统',
+        path: '/study/fullstack/',
+        collapsable: true,
+        sidebarDepth: 3,
         children: [
-            '/study/0',
-            '/study/1'
+            '/study/fullstack/rd',
+            '/study/fullstack/fe'
         ]
     },
 ]
