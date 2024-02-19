@@ -12,6 +12,7 @@ module.exports = {
     '/RD/spring': require('../RD/spring/sidebar'),
     '/RD/linux': require('../RD/linux/sidebar'),
     '/RD/tools': require('../RD/tools/sidebar'),
+    '/RD/business': require('../RD/business/sidebar'),
 
 
     '/FE/VUE': require('../FE/VUE/sidebar'),

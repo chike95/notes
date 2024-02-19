@@ -28,6 +28,7 @@ module.exports = [
             { text: 'Spring', link: '/RD/spring/' },
             { text: 'Linux', link: '/RD/linux/' },
             { text: '工具', link: '/RD/tools/' },
+            { text: '常见需求', link: '/RD/common/' },
         ]
     },
     {
