@@ -9,6 +9,15 @@ module.exports = [
         ]
     },
     {
+        title: 'VUE3实战：通用开发案例',
+        path: '/FE/VUE/vue-sunday/',
+        collapsable: true,
+        sidebarDepth: 3,
+        children: [
+            '/FE/VUE/vue-sunday/01'
+        ]
+    },
+    {
         title: 'VuePress',
         path: '/FE/VUE/vuepress',
         collapsable: true,
