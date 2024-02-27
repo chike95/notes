@@ -9,4 +9,10 @@ module.exports = [
             // '/RD/tools/mysql/',
         ]
     },
+    {
+        title: 'redis',
+        path: '/RD/tools/redis',
+        collapsable: true,
+        sidebarDepth: 3,
+    },
 ]

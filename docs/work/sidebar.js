@@ -34,7 +34,10 @@ module.exports = [
         title: '调试系统',
         path: '/work/debug/',
         collapsable: true,
-        sidebarDepth: 2,
+        sidebarDepth: 3,
+        children: [
+            '/work/debug/1',
+        ]
     },
     {
         title: 'Ubuntu 部署',

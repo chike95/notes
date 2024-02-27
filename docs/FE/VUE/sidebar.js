@@ -16,6 +16,14 @@ module.exports = [
         children: [
             '/FE/VUE/vue-sunday/01'
         ]
+    }, {
+        title: '工具链',
+        path: '/FE/VUE/tools/',
+        collapsable: true,
+        sidebarDepth: 2,
+        children: [
+            '/FE/VUE/tools/vite'
+        ]
     },
     {
         title: 'VuePress',

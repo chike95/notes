@@ -42,16 +42,7 @@ module.exports = [
         title: 'KOA',
         path: '/RD/node/koa/',
         collapsable: true,
-        sidebarDepth: 2,
-        children: [
-            // '/RD/node/koa/koa2-sina'
-        ]
-    },
-    {
-        title: 'KOA2实战：打造API接口',
-        path: '/RD/node/koa-api',
-        collapsable: true,
-        sidebarDepth: 2,
+        sidebarDepth: 3,
     },
     {
         title: 'KOA2实战：模拟新浪微博',
