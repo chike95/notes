@@ -18,6 +18,15 @@ module.exports = [
         ]
     },
     {
+        title: 'Echarts',
+        path: '/FE/WEB_3D/echarts/',
+        collapsable: true,
+        sidebarDepth: 3,
+        children: [
+            '/FE/WEB_3D/echarts/01_quickStart',
+        ]
+    },
+    {
         title: 'WebGL',
         path: '/FE/WEB_3D/webgpu',
         collapsable: true,
