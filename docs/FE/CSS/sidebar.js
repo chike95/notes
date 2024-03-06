@@ -16,5 +16,13 @@ module.exports = [
         // children: [
         //     '/FE/VUE/base'
         // ]
+    }, {
+        title: 'Tailwind',
+        path: '/FE/CSS/tailwind',
+        collapsable: true,
+        sidebarDepth: 2,
+        children: [
+            '/FE/VUE/base'
+        ]
     },
 ]

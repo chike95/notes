@@ -31,6 +31,21 @@ module.exports = [
         path: '/RD/node/http',
         collapsable: true,
         sidebarDepth: 2,
+    }, {
+
+        title: 'TCP',
+        path: '/RD/node/tcp',
+        collapsable: true,
+        sidebarDepth: 2,
+    }, {
+
+        title: 'Sequelize',
+        path: '/RD/node/sequelize',
+        collapsable: true,
+        sidebarDepth: 2,
+        children: [
+            '/RD/node/sequelize/01',
+        ]
     },
     {
         title: 'Express',
@@ -42,18 +57,19 @@ module.exports = [
         title: 'KOA',
         path: '/RD/node/koa/',
         collapsable: true,
-        sidebarDepth: 3,
+        sidebarDepth: 2,
     },
     {
         title: 'KOA2实战：模拟新浪微博',
         path: '/RD/node/koa/',
         collapsable: true,
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         children: [
             '/RD/node/koa/koa2-sina-01',
             '/RD/node/koa/koa2-sina-02',
             '/RD/node/koa/koa2-sina-03',
-
+            '/RD/node/koa/koa2-sina-04',
+            '/RD/node/koa/koa2-sina-05',
         ]
     },
     {
@@ -67,18 +83,6 @@ module.exports = [
         ]
     },
     {
-
-        title: 'TCP',
-        path: '/RD/node/tcp',
-        collapsable: true,
-        sidebarDepth: 2,
-    },
-    {
-        title: '功能代码',
-        path: '/RD/node/code',
-        collapsable: true,
-        sidebarDepth: 2,
-    }, {
         title: 'Git',
         path: '/RD/node/git',
         collapsable: true,
@@ -86,6 +90,12 @@ module.exports = [
     }, {
         title: 'nodemailer',
         path: '/RD/node/nodemailer',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
+    {
+        title: '功能代码',
+        path: '/RD/node/code',
         collapsable: true,
         sidebarDepth: 2,
     },

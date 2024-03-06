@@ -38,5 +38,14 @@ module.exports = [
         collapsable: true,
         sidebarDepth: 2,
     },
+    {
+        title: 'Electron',
+        path: '/FE/others/electron/',
+        collapsable: true,
+        sidebarDepth: 3,
+        // children: [
+        //     '/FE/VUE/base'
+        // ]
+    },
 
 ]

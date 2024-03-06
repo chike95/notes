@@ -14,7 +14,7 @@
 
 ```JS
 <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
-<div id="main" style="width: 600px;height:400px;"></div>
+<div id="mainChart" style="width: 600px;height:400px;"></div>
 ```
 
 3 初始化 echarts 实例
