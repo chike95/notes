@@ -90,6 +90,7 @@ module.exports = [
         sidebarDepth: 1,
         children: [
             '/RD/node/nest/book-admin/01',
+            '/RD/node/nest/book-admin/02',
         ]
     },
     {
