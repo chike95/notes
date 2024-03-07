@@ -235,18 +235,15 @@ router.patch("/changePassword", loginCheck, async (ctx, next) => {
 
 D:\project\koa2-weibo-code\src\controller\user.js
 
-```
+```js
 async function changePassword(userName, password, newPassword) {
-    const result = await updateUser(
-        { newPassword },
-        { userName, password }
-    )
-    // 成功
-    if (result) {
-        return new SuccessModel()
-    }
-    //失败
-    return new ErrorModel(changePasswordFailInfo)
+  const result = await updateUser({ newPassword }, { userName, password });
+  // 成功
+  if (result) {
+    return new SuccessModel();
+  }
+  //失败
+  return new ErrorModel(changePasswordFailInfo);
 }
 ```
 

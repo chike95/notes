@@ -70,6 +70,8 @@ module.exports = [
             '/RD/node/koa/koa2-sina-03',
             '/RD/node/koa/koa2-sina-04',
             '/RD/node/koa/koa2-sina-05',
+            '/RD/node/koa/koa2-sina-06',
+            '/RD/node/koa/koa2-sina-07',
         ]
     },
     {
@@ -80,6 +82,14 @@ module.exports = [
         children: [
             '/RD/node/quanzhan/webapp-01',
             '/RD/node/quanzhan/webapp-02',
+        ]
+    }, {
+        title: 'NestJS：全栈后台管理系统',
+        path: '/RD/node/nest/book-admin/',
+        collapsable: true,
+        sidebarDepth: 1,
+        children: [
+            '/RD/node/nest/book-admin/01',
         ]
     },
     {
