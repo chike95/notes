@@ -87,10 +87,11 @@ module.exports = [
         title: 'NestJS：全栈后台管理系统',
         path: '/RD/node/nest/book-admin/',
         collapsable: true,
-        sidebarDepth: 1,
+        sidebarDepth: 2,
         children: [
             '/RD/node/nest/book-admin/01',
             '/RD/node/nest/book-admin/02',
+            '/RD/node/nest/book-admin/03',
         ]
     },
     {
