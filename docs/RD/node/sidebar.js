@@ -92,6 +92,7 @@ module.exports = [
             '/RD/node/nest/book-admin/01',
             '/RD/node/nest/book-admin/02',
             '/RD/node/nest/book-admin/03',
+            '/RD/node/nest/book-admin/04',
         ]
     },
     {
