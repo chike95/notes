@@ -93,16 +93,12 @@ module.exports = [
             '/RD/node/nest/book-admin/02',
             '/RD/node/nest/book-admin/03',
             '/RD/node/nest/book-admin/04',
+            '/RD/node/nest/book-admin/05',
         ]
     },
     {
         title: 'Git',
         path: '/RD/node/git',
-        collapsable: true,
-        sidebarDepth: 2,
-    }, {
-        title: 'nodemailer',
-        path: '/RD/node/nodemailer',
         collapsable: true,
         sidebarDepth: 2,
     },
@@ -111,5 +107,15 @@ module.exports = [
         path: '/RD/node/code',
         collapsable: true,
         sidebarDepth: 2,
+    },
+    {
+        title: '功能库',
+        path: '/RD/node/library/',
+        collapsable: true,
+        sidebarDepth: 2,
+        children: [
+            '/RD/node/library/modbus-serial',
+            '/RD/node/nodemailer',
+        ]
     },
 ]

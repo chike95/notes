@@ -22,13 +22,18 @@ module.exports = [
             '/work/software/485horizontal',
             '/work/software/explorer',
             '/work/software/function',
+            '/work/software/modbus/strain',
         ]
     },
     {
         title: '网络设备',
-        path: '/work/devices/net',
+        path: '/work/devices/',
         collapsable: true,
-        sidebarDepth: 2,
+        sidebarDepth: 3,
+        children: [
+            '/work/devices/net',
+            '/work/devices/dahua',
+        ]
     },
     {
         title: '调试系统',
