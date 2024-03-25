@@ -24,7 +24,7 @@ FileZilla：如何快速搭建 FTP 服务器: <https://www.bilibili.com/video/BV
 
 ## 播放器
 
-## 相关内容
+## 工作日志
 
 ### 2024.03.25
 
