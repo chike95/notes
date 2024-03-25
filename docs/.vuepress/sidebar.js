@@ -24,8 +24,10 @@ module.exports = {
 
     '/study/': require('../study/sidebar'),
 
-    '/work/': require('../work/sidebar'),
-
+    // '/work/': require('../work/sidebar'),
+    '/work/ysb/': require('../work/ysb/sidebar'),
+    '/work/youren/': require('../work/youren/sidebar'),
+    '/work/devices/': require('../work/devices/sidebar'),
 
     '/thought/zhuangzhou/': require('../thought/zhuangzhou/sidebar'),
     '/thought/chaos/': require('../thought/chaos/sidebar'),
