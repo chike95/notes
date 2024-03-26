@@ -52,34 +52,41 @@ client.setID(44);
 return client.readHoldingRegisters(0x0050, 1);
 ```
 
-#### 程序代码
+#### 程序代码 - 修改编号
 
 ```js
 const ModbusRTU = require("modbus-serial");
 const client = new ModbusRTU();
 
-// 打开串口连接
-client
-  .connectRTUBuffered("COM2", { baudRate: 9600 })
-  .then(async () => {
-    // client.setID(44);
+client.connectRTUBuffered("COM2", { baudRate: 9600 }, read);
+// client.connectRTUBuffered("COM2", { baudRate: 9600 }, () => write(1, 22));
 
-    console.log("Serial port connected.");
-    return client.readHoldingRegisters(0x0050, 1);
-  })
-  .then((data) => {
-    console.log("Read data:", data.data);
-    // return client.writeRegister(0x0050, 44); // 写入数据
-  })
-  .then(() => {
-    console.log("Write operation successful.");
-    client.close();
-  })
-  .catch((err) => {
-    console.error("Error:", err);
-    client.close();
-  });
+function write(addr, newAddr) {
+  client.setID(addr);
+
+  // on device number 1.
+  client.writeRegister(0x0050, newAddr).then(console.log).then(read);
+}
+
+function read() {
+  for (let i = 0; i < 255; i++) {
+    client.setID(i);
+  }
+  client.readHoldingRegisters(0x0050, 1).then(console.log);
+}
 ```
+
+#### 数据返回：
+
+{ address: 80, value: 1 }
+
+{ data: [ 1 ], buffer: <Buffer 00 01> }
+
+#### 存在的问题：
+
+write 函数中的 client.writeRegister().then(console.log).then(read)可能会导致不可预测的行为，因为 read 函数会在写入操作之前就被调用。
+
+其次，在 read 函数中，通过循环设置设备 ID 并读取保持寄存器的值是不合适的，这将导致对多个设备进行读取操作而不是特定的设备。
 
 ## 工作记录
 

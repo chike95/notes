@@ -40,7 +40,7 @@ module.exports = [
             { text: '英斯泊', link: '/work/ysb/' },
             { text: '有人物联', link: '/work/youren/' },
             { text: '传感设备', link: '/work/devices/' },
-            { text: '工作日志', link: '/work/logs/' },
+            { text: '项目日志', link: '/work/logs/' },
         ]
     },
     // {

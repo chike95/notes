@@ -38,6 +38,8 @@ FileZilla：如何快速搭建 FTP 服务器: <https://www.bilibili.com/video/BV
 
 #### 电脑：大头笔记本
 
+FileZilla 配置
+
 分组：root
 
 用户：root

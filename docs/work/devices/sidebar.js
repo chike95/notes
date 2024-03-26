@@ -14,4 +14,10 @@ module.exports = [
         collapsable: true,
         sidebarDepth: 2,
     },
+    {
+        title: '蒲公英 R300A',
+        path: '/work/devices/oray/R300',
+        collapsable: true,
+        sidebarDepth: 2,
+    },
 ]

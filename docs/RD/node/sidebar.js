@@ -114,7 +114,7 @@ module.exports = [
         collapsable: true,
         sidebarDepth: 2,
         children: [
-            '/RD/node/library/modbus-serial',
+            '/RD/node/library/modbus-serial/modbus-serial',
             '/RD/node/nodemailer',
         ]
     },
